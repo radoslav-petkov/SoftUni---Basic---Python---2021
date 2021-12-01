@@ -1,23 +1,22 @@
-width = int(input())
-length = int(input())
-heigth = int(input())
+w = int(input())
+l= int(input())
+h = int(input())
 
-there_is_more_free_space = True
-total_free_space = width * length * heigth
-command = input()
+free_space = w * l * h
 
-while command != "Done":
-    number_of_boxes = int(command)
-    total_free_space -= number_of_boxes
-    if total_free_space < 0:
-        there_is_more_free_space = False
+while True:
+    box = input()
+    if box == "Done":
+        print(f"{free_space} Cubic meters left.")
         break
-    command = input()
-if there_is_more_free_space:
-    print(f"{total_free_space} Cubic meters left.")
-else:
-    print(f"No more free space! You need {abs(total_free_space)} Cubic meters more.")
 
+    free_space -= int(box)
+
+    if free_space <= 0:
+        print(f"No more free space! You need {abs(free_space)} Cubic meters more.")
+        break
+        
+        
 #     or
 #
 # width = int(input())
